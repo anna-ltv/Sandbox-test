@@ -1,1 +1,1 @@
-# Sandpox API testing practice using Postman
+# Sandpox for testing practice using Postman, Selenium, Python, Java
