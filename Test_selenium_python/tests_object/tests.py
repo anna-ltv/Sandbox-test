@@ -1,4 +1,6 @@
 import time
+
+from text_input_page import TextInputPage
 from class_attribute_page import ClassAttributePage
 from hidden_layers_page import HiddenLayersPage
 from home_page import HomePage
@@ -62,4 +64,19 @@ def test_hidden_layers():
   hidden_layers_page.click_hidden_button()
   hidden_layers_page.click_button_twice()
 
-#подумать над assert, чтобы проверять, что кнопка зеленая уже не доступна
+def test_input_text():
+  web_driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
+
+  home_page = HomePage(web_driver)
+  home_page.open()
+  home_page.click_text_input_link()
+  assert "Text Input" in web_driver.page_source  # checking the presence of text input title
+
+  text_input_page = TextInputPage(web_driver)
+  value = "New button"
+  text_input_page.enter_text(value)
+
+  text_input_page.change_button_name()
+
+
+
