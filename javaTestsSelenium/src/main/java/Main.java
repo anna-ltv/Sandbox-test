@@ -11,7 +11,7 @@ public class Main {
         driver.manage().window().maximize();
 
 //open browser with desired URL
-        driver.get("http://qcmdbui.qcmdb.qrun.diasoft.ru/");
+        driver.get("http://somewebpage.com/");
 //enter username and password
         WebElement login = driver.findElement(By.id("username"));
         login.sendKeys("guest");
